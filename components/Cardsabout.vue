@@ -25,9 +25,6 @@
  align-items: center;/* Centrar verticalmente */
  height : 60vh;  /* Altura de la pantalla del contenedor */
 }
-</style>
-
-<style scoped>
 .button-container {
  display: flex;
  justify-content: center; /* Centrar de manera horizontal */
