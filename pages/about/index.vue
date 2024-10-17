@@ -1,12 +1,12 @@
 <template>
   <div>
     <h1>
-      {{ $t("Acerca de nosotros") }}
+      {{ $t("about") }}
     </h1>
 
     <p>
-     {{ $t("details")}}
+      {{ $t("detailsAbout") }}
     </p>
-    <Cardsabout/>
+    <Cardsabout />
   </div>
 </template>

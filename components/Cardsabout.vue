@@ -8,12 +8,12 @@
          src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
         </v-img>
     </div>
-        <div class = "button-container">
-             <v-btn to= "/"> 
+    <div class = "button-container">
+            <v-btn to= "/"> 
              Inicio
-             </v-btn>
-             </div>
-
+            </v-btn>
+    </div>
+  
 </template> 
 
 <script setup></script>
