@@ -1,7 +1,12 @@
 <template>
   <div>
     <h1>
-      {{ $t("aboutTitle") }}
+      {{ $t("about") }}
     </h1>
+
+    <p>
+      {{ $t("detailsAbout") }}
+    </p>
+    <Cardsabout />
   </div>
 </template>
