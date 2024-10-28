@@ -11,14 +11,19 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
+    "@pinia/nuxt": "^0.5.5",
     "firebase-functions": "^5.0.1",
     "flag-icons": "^7.2.3",
     "nuxt": "^3.12.4",
     "vue": "latest"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.0.3",
     "@nuxtjs/i18n": "^8.3.3",
     "vite-plugin-vuetify": "^2.0.4",
     "vuetify": "^3.6.14"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }
