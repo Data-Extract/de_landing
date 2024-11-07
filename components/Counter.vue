@@ -9,6 +9,15 @@
   <div class="button-counter">
     <v-btn @click="incrementar" :disabled="counter >= 100"> Incrementar </v-btn>
   </div>
+
+  <v-card
+    href="https://github.com/vuetifyjs/vuetify/"
+    class="mx-auto"
+    max-width="344"
+    rel="noopener"
+    target="_blank"
+    title="Vuetify on GitHub"
+  ></v-card>
 </template>
 
 <script setup lang="ts">
