@@ -1,3 +1,19 @@
+<script setup lang="ts">
+const props = defineProps<{
+  title: string;
+  subtitle: string;
+  imgURL: string;
+  descripcion: string;
+  id: number;
+}>();
+
+const emit = defineEmits(["viewDetails"]);
+
+const handleClick = () => {
+  emit("viewDetails", props.id); // Emitir el evento con el id del servicio
+};
+</script>
+
 <template>
   <v-card
     :disabled="loading"
@@ -26,53 +42,22 @@
     </v-card-text>
 
     <v-divider class="mx-4 mb-1"></v-divider>
-
-    <v-btn
+    <v-card-actions>
+      <v-btn
+      variant="outlined"
       color="primary"
-      @click="handleViewDetails"
+      @click="handleClick"
       class="mx-auto text-black"
     >
       Details
     </v-btn>
+    <v-btn
+      color="red"
+      @click="handleClick"
+      class="mx-auto text-black"
+    >
+      Otro
+    </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
-
-<script>
-export default {
-  props: {
-    title: {
-      type: String,
-      default: "Default Title",
-    },
-    imgURL: {
-      type: String,
-      default: "https://cdn.vuetifyjs.com/images/cards/cooking.png", // Valor por defecto
-    },
-    subtitle: {
-      type: String,
-      default: "Subtitle por defecto",
-    },
-    description: {
-      type: String,
-      default: "Descripción por defecto",
-    },
-
-    id: {
-      type: Number,
-      required: true,
-    },
-  },
-  data: () => ({
-    loading: false,
-    selection: 1,
-    show: false,
-  }),
-
-  methods: {
-    handleViewDetails() {
-      // evento para manejar el clic del boton
-      this.$emit("viewDetails", this.id);
-    }, // El componente GriService es quien lo maneja
-  },
-};
-</script>

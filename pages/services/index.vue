@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+
 interface Servicio {
   titulo: string;
   subtitulo: string;
@@ -7,8 +8,8 @@ interface Servicio {
   id: number;
   descripcion: string;
 }
+
 const data = () => {
-  // defino la funcion data que devuelve un objeto que tiene un arreglo
   return {
     servicios: [
       {
@@ -48,17 +49,16 @@ const data = () => {
 };
 
 const { servicios } = data();
-const router = useRouter(); // desestructurara la funcion data, tomamos la propiedad servicio que devuelve data y le asigna una constante servicios
+const router = useRouter();
 
 const viewDetails = (id: number) => {
-  router.push({ name: "service-details", params: { id } }); // Redirigir a la ruta, segun el id de cada una
+  router.push({ name: "services-id", params: { id } }); // Redirigir a la ruta usando el nombre correcto
 };
 </script>
+
 <template>
   <div>
-    <h1>
-      {{ $t("servicesTitle") }}
-    </h1>
+    <h1>{{ $t("servicesTitle") }}</h1>
     <GridServices :servicios="servicios" @viewDetails="viewDetails" />
   </div>
 </template>

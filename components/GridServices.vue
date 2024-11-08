@@ -17,7 +17,7 @@ const props = defineProps<{
 const emit = defineEmits(["viewDetails"]);
 
 const viewDetails = (id: number) => {
-  emit("viewDetails", id); // emito el evento con el id del servicio
+  emit("viewDetails", id); // Emitir el evento con el id del servicio
 };
 </script>
 
@@ -37,7 +37,7 @@ const viewDetails = (id: number) => {
           :imgURL="servicio.imgURL"
           :descripcion="servicio.descripcion"
           :id="servicio.id"
-          @viewDetails="viewDetails"
+          @click="viewDetails(servicio.id)"
         />
       </v-col>
     </v-row>
