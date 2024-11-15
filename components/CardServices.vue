@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 const props = defineProps<{
   title: string;
   subtitle: string;
   imgURL: string;
-  descripcion: string;
+  description: string;
   id: number;
 }>();
 
@@ -12,6 +14,8 @@ const emit = defineEmits(["viewDetails"]);
 const handleClick = () => {
   emit("viewDetails", props.id); // Emitir el evento con el id del servicio
 };
+
+const loading = ref(false); //
 </script>
 
 <template>
@@ -44,20 +48,16 @@ const handleClick = () => {
     <v-divider class="mx-4 mb-1"></v-divider>
     <v-card-actions>
       <v-btn
-      variant="outlined"
-      color="primary"
-      @click="handleClick"
-      class="mx-auto text-black"
-    >
-      Details
-    </v-btn>
-    <v-btn
-      color="red"
-      @click="handleClick"
-      class="mx-auto text-black"
-    >
-      Otro
-    </v-btn>
+        variant="outlined"
+        color="primary"
+        @click="handleClick"
+        class="mx-auto text-black"
+      >
+        Details
+      </v-btn>
+      <v-btn color="red" @click="handleClick" class="mx-auto text-black">
+        Otro
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>

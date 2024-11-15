@@ -20,5 +20,9 @@
   "cloudStorageDescriptionText": "Our Cloud Storage service offers reliable and secure storage solutions for your business. Whether you need to store large datasets, manage backups, or ensure high availability, our cloud solutions scale with your needs. Keep your data safe, accessible, and ready for growth with our cloud storage services.",
   "detailsAbout": "We are a team dedicated to offering you expert guidance and practical support to empower your decisions.",
   "counterTitle": "Counter",
-  "servicesTitle": "servicesTitle"
+  "servicesTitle": "servicesTitle",
+  "contactTitle": "Contact",
+  "contactDescription": "Are you interested in our services? Let’s talk! How would you like to get in touch with us?",
+  "contactoption": "As a Person",
+  "contactoptione": "As a Company"
 }

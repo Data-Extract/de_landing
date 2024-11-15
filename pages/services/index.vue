@@ -6,7 +6,7 @@ interface Servicio {
   subtitulo: string;
   imgURL: string;
   id: number;
-  descripcion: string;
+  description: string;
 }
 
 const data = () => {
@@ -18,7 +18,7 @@ const data = () => {
         imgURL:
           "https://firebasestorage.googleapis.com/v0/b/dataextractco.appspot.com/o/dataconsulting-home.gif?alt=media&token=2c1ab8b6-d4fa-4293-beea-4741bb2e1aa7",
         id: 1,
-        descripcion: "Details",
+        description: "Details",
       },
       {
         titulo: "Web Scraping",
@@ -26,7 +26,7 @@ const data = () => {
         imgURL:
           "https://firebasestorage.googleapis.com/v0/b/dataextractco.appspot.com/o/webscraping-home.gif?alt=media&token=8c24861f-1ac6-4447-92bc-db8347214645",
         id: 2,
-        descripcion: "Details",
+        description: "Details",
       },
       {
         titulo: "Bussines Intelligence",
@@ -34,7 +34,7 @@ const data = () => {
         imgURL:
           "https://firebasestorage.googleapis.com/v0/b/dataextractco.appspot.com/o/bi-home.gif?alt=media&token=ae918c15-bc2b-443b-abac-db8a85c3fe9f",
         id: 3,
-        descripcion: "Details",
+        description: "Details",
       },
       {
         titulo: "Cloud storage",
@@ -42,7 +42,7 @@ const data = () => {
         imgURL:
           "https://firebasestorage.googleapis.com/v0/b/dataextractco.appspot.com/o/storage-home.gif?alt=media&token=f0262eca-fa3c-428c-a7a5-76cf12c25173",
         id: 4,
-        descripcion: "Details",
+        description: "Details",
       },
     ],
   };
