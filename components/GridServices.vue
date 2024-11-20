@@ -7,7 +7,7 @@ interface Servicio {
   subtitulo: string;
   imgURL: string;
   id: number;
-  descripcion: string;
+  description: string;
 }
 
 const props = defineProps<{
@@ -35,7 +35,7 @@ const viewDetails = (id: number) => {
           :title="servicio.titulo"
           :subtitle="servicio.subtitulo"
           :imgURL="servicio.imgURL"
-          :descripcion="servicio.descripcion"
+          :description="servicio.description"
           :id="servicio.id"
           @click="viewDetails(servicio.id)"
         />

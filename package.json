@@ -15,6 +15,7 @@
     "firebase-functions": "^5.0.1",
     "flag-icons": "^7.2.3",
     "nuxt": "^3.12.4",
+    "vee-validate": "^4.14.7",
     "vue": "latest",
     "vue-router": "^4.4.5"
   },
