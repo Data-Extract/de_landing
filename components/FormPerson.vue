@@ -8,6 +8,7 @@
             :counter="50"
             :error-messages="name.errorMessage.value"
             label=" Full name"
+            variant="outlined"
           ></v-text-field>
         </v-col>
         <v-col cols="12">
@@ -18,6 +19,8 @@
                 :counter="10"
                 :error-messages="phone.errorMessage.value"
                 label="Phone Number"
+                type="number"
+                variant="outlined"
               ></v-text-field>
             </v-col>
             <v-col cols="12" md="6">
@@ -25,6 +28,7 @@
                 v-model="email.value.value"
                 :error-messages="email.errorMessage.value"
                 label="E-mail"
+                variant="outlined"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -35,12 +39,18 @@
             :counter="50"
             :error-messages="details.errorMessage.value"
             label="Details"
+            variant="outlined"
           ></v-textarea>
         </v-col>
         <v-col cols="12" class="text-center">
-          <v-btn class="me-4" type="submit" color="primary"> submit </v-btn>
+          <v-btn class="me-4" type="submit" color="primary">
+            {{ $t("btnformprson") }}
+          </v-btn>
           <v-btn class="mi-4" color="primary" @click="handleReset">
-            clear
+            {{ $t("btnformprsonc") }}
+          </v-btn>
+          <v-btn class="ms-4" color="primary" @click="reiniciar">
+            {{ $t("contactreturn") }}
           </v-btn>
         </v-col>
       </v-row>
@@ -49,6 +59,12 @@
 </template>
 <script setup>
 import { useField, useForm } from "vee-validate";
+defineProps({
+  reiniciar: {
+    type: Function,
+    Required: true,
+  },
+});
 const { handleSubmit, handleReset } = useForm({
   validationSchema: {
     name(value) {
@@ -57,6 +73,9 @@ const { handleSubmit, handleReset } = useForm({
       }
       if (value.length < 2) {
         return "Name must be at least 2 characters";
+      }
+      if (!/^[a-zA-ZÁÉÍÓÚáéíóúÜüÑñ\s]+$/.test(value)) {
+        return "Only letters allowed";
       }
       if (value?.length <= 50) return true;
 
@@ -76,7 +95,7 @@ const { handleSubmit, handleReset } = useForm({
         return "email is required";
       }
 
-      if (/^[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/i.test(value))
+      if (/^[a-zA-Z0-9._%+-]{1,50}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(value))
         return true;
 
       return "Must be a valid e-mail.";

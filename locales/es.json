@@ -24,5 +24,11 @@
   "contactTitle": "Contacto",
   "contactDescription": "Estas interesado en nuestros servicios? ¡Hablemos! Cómo deseas contactarnos ? ",
   "contactoption": "Como Persona",
-  "contactoptione": "Como Empresa"
+  "contactoptione": "Como Empresa",
+  "btnformprson": "Enviar",
+  "btnformprsonc": "Limpiar",
+  "contactreturnp": "Volver",
+  "btnformbusiness": "Enviar",
+  "btnformbusinessc": "Limpiar",
+  "contactreturn": "Volver"
 }

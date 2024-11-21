@@ -9,6 +9,7 @@
               :counter="50"
               :error-messages="name.errorMessage.value"
               label="Company name"
+              variant="outlined"
             ></v-text-field>
           </v-col>
           <v-col cols="12" md="6">
@@ -17,6 +18,7 @@
               :counter="50"
               :error-messages="personname.errorMessage.value"
               label="Person  full name"
+              variant="outlined"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -29,6 +31,8 @@
               :counter="10"
               :error-messages="phone.errorMessage.value"
               label="Phone Number"
+              type="number"
+              variant="outlined"
             ></v-text-field>
           </v-col>
           <v-col cols="12" md="6">
@@ -36,6 +40,7 @@
               v-model="email.value.value"
               :error-messages="email.errorMessage.value"
               label="E-mail"
+              variant="outlined"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -46,17 +51,31 @@
           :counter="50"
           :error-messages="details.errorMessage.value"
           label="Details"
+          variant="outlined"
         ></v-textarea>
       </v-col>
       <v-col cols="12" class="text-center">
-        <v-btn class="me-4" type="submit" color="primary"> submit </v-btn>
-        <v-btn class="mi-4" color="primary" @click="handleReset"> clear </v-btn>
+        <v-btn class="me-4" type="submit" color="primary">
+          {{ $t("btnformbusiness") }}</v-btn
+        >
+        <v-btn class="mi-4" color="primary" @click="handleReset">
+          {{ $t("btnformbusinessc") }}
+        </v-btn>
+        <v-btn class="ms-4" color="primary" @click="reiniciar">
+          {{ $t("contactreturn") }}
+        </v-btn>
       </v-col>
     </form>
   </v-sheet>
 </template>
 <script setup>
 import { useField, useForm } from "vee-validate";
+defineProps({
+  reiniciar: {
+    type: Function,
+    Required: true,
+  },
+});
 const { handleSubmit, handleReset } = useForm({
   validationSchema: {
     name(value) {
@@ -99,8 +118,8 @@ const { handleSubmit, handleReset } = useForm({
         return "email is required";
       }
 
-      if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true;
-
+      if (/^[a-zA-Z0-9._%+-]{1,50}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(value))
+        return true;
       return "Must be a valid e-mail.";
     },
 
