@@ -1,0 +1,33 @@
+name: Deploy Landing Page
+
+on:
+  push:
+    branches:
+      - dev
+      # - master
+
+jobs:
+  build_and_deploy:
+    name: Build and Deploy to Firebase
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build Next.js project
+        run: pnpm run build
+
+      - name: Install Firebase CLI
+        run: pnpm install -g firebase-tools
+
+      - name: Deploy to Firebase Hosting
+        run: firebase deploy --only hosting --token "${{ secrets.FIREBASE_TOKEN }}"
