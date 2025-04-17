@@ -26,12 +26,6 @@ jobs:
         with:
           version: 9
 
-      - name: Setup pnpm environment
-        run: |
-          pnpm setup
-          echo "PNPM_HOME=$HOME/.local/share/pnpm" >> $GITHUB_ENV
-          echo "$HOME/.local/share/pnpm" >> $GITHUB_PATH
-
       - name: Install dependencies
         run: pnpm install
 
