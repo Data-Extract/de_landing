@@ -35,13 +35,11 @@ jobs:
       - name: Install Firebase CLI
         run: pnpm install -g firebase-tools
 
+      - name: Authenticate with Firebase
+        run: firebase login:ci --token ${{ secrets.FIREBASE_CI_TOKEN }}
+
       - name: Save credentials to file
         run: echo "${{ secrets.FIREBASE_CREDENTIALS_JSON }}" > ${{ github.workspace }}/firebase-key.json
-
-      - name: Set Firebase Project
-        run: firebase use --add ${{ secrets.FIREBASE_PROJECT }}
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/firebase-key.json
 
       - name: Enable Firebase Experiments
         run: firebase experiments:enable webframeworks
