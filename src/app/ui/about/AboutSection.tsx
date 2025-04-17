@@ -1,10 +1,10 @@
+import Image from "next/image";
 import React from "react";
 
 const AboutSection = () => {
   return (
     <section className="bg-white py-16 px-6 md:px-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center relative z-10">
-        {/* Texto */}
         <div>
           <h2 className="text-4xl font-bold mb-4">About</h2>
           <h3 className="text-md font-semibold text-gray-600 mb-4">
@@ -17,7 +17,7 @@ const AboutSection = () => {
           </p>
           <p className="text-gray-700 mb-6">
             From data extraction and processing to advanced AI-driven analytics, we provide secure,
-            scalable, and efficient solutions tailored to your needs. Whether you're a startup or a
+            scalable, and efficient solutions tailored to your needs. Whether you&apos;re a startup or a
             global enterprise, our expertise in big data, automation, and visualization will elevate
             your business strategy.
           </p>
@@ -29,9 +29,8 @@ const AboutSection = () => {
           </a>
         </div>
 
-        
+
         <div className="relative w-full h-full">
-          {/* Triángulo decorativo rotado 180° y 40% más grande */}
           <div
             className="absolute -bottom-24 -right-28 w-[550%] h-[530%] bg-indigo-600 z-0"
             style={{
@@ -39,11 +38,12 @@ const AboutSection = () => {
               transform: 'rotate(180deg)',
             }}
           />
-          {/* Imagen */}
-          <img
+          <Image
             src="/about.jpg"
+            width={100}
+            height={100}
             alt="Team working with data"
-             className="relative z-10 w-full rounded-lg shadow-lg transform transition-transform duration-500 ease-in-out hover:scale-105"
+            className="relative z-10 w-full rounded-lg shadow-lg transform transition-transform duration-500 ease-in-out hover:scale-105"
           />
         </div>
       </div>
