@@ -38,6 +38,11 @@ jobs:
       - name: Save credentials to file
         run: echo "${{ secrets.FIREBASE_CREDENTIALS_JSON }}" > ${{ github.workspace }}/firebase-key.json
 
+      - name: Set Firebase Project
+        run: firebase use --add ${{ secrets.FIREBASE_PROJECT }}
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/firebase-key.json
+
       - name: Enable Firebase Experiments
         run: firebase experiments:enable webframeworks
         env:
