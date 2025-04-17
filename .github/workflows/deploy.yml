@@ -44,7 +44,6 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/firebase-key.json
 
       - name: Deploy to Firebase
-        run: firebase deploy --only hosting --project $FIREBASE_PROJECT
+        run: firebase deploy --only hosting --project ${{ secrets.FIREBASE_PROJECT }}
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/firebase-key.json
-          FIREBASE_PROJECT: ${{ secrets.FIREBASE_PROJECT }}
