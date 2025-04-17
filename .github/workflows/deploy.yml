@@ -35,13 +35,16 @@ jobs:
       - name: Install Firebase CLI
         run: pnpm install -g firebase-tools
 
+      - name: Save credentials to file
+        run: echo "${{ secrets.FIREBASE_CREDENTIALS_JSON }}" > ${{ github.workspace }}/firebase-key.json
+
       - name: Enable Firebase Experiments
         run: firebase experiments:enable webframeworks
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/firebase-key.json
 
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting --project $FIREBASE_PROJECT
+        run: firebase deploy --only hosting --project $FIREBASE_PROJECT
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/firebase-key.json
           FIREBASE_PROJECT: ${{ secrets.FIREBASE_PROJECT }}
