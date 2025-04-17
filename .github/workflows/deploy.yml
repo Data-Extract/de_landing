@@ -35,9 +35,6 @@ jobs:
       - name: Install Firebase CLI
         run: pnpm install -g firebase-tools
 
-      - name: Authenticate with Firebase
-        run: firebase login:ci --token ${{ secrets.FIREBASE_CI_TOKEN }}
-
       - name: Save credentials to file
         run: echo "${{ secrets.FIREBASE_CREDENTIALS_JSON }}" > ${{ github.workspace }}/firebase-key.json
 
@@ -47,6 +44,4 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/firebase-key.json
 
       - name: Deploy to Firebase
-        run: firebase deploy --only hosting --project ${{ secrets.FIREBASE_PROJECT }}
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/firebase-key.json
+        run: firebase deploy --only hosting --project ${{ secrets.FIREBASE_PROJECT }} --token ${{ secrets.FIREBASE_CI_TOKEN }}
