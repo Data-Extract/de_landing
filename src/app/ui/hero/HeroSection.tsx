@@ -3,7 +3,8 @@ import React from "react";
 const HeroSection = () => {
   return (
     <section
-      className="relative flex items-center justify-center h-screen bg-cover bg-center text-white"
+      id="home"
+      className="relative flex items-center justify-center h-screen bg-cover bg-center text-white" 
     >
       <div className="relative z-10 text-center px-6">
         <h1 className="text-4xl md:text-6xl font-bold">
