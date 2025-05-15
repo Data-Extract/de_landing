@@ -12,7 +12,7 @@ export default function Home() {
       <Navbar />
       <BackgroundImage /> {/* Imagen de fondo */}
       <HeroSection />
-      <ServicesSection />
+      <ServicesSection  />
       <AboutSection />
       <ScheduleAppointment/>
     </main>

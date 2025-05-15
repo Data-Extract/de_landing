@@ -11,7 +11,7 @@ export default function ScheduleAppointment() {
   
 
   return (
-    <section className="bg-white py-12 px-6">
+    <section  id="contact" className="bg-white py-12 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center mb-6">
           <h2 className="text-3xl font-bold text-left flex-1">

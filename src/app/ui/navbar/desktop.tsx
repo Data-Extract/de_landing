@@ -11,22 +11,25 @@ export default function DesktopNavbar() {
                     width={70}
                     height={70}
                     className="rounded-full"
+                    style={{ mixBlendMode: 'multiply' }}
                 />
                 <span className="text-xl font-bold">Data Extract</span>
             </div>
 
             {/* Menú de Navegación */}
             <div className="flex items-center space-x-8 text-base font-medium">
-                <span className="hover:text-blue-400 cursor-pointer">Home</span>
-                <span className="hover:text-blue-400 cursor-pointer">Services</span>
-                <span className="hover:text-blue-400 cursor-pointer">About</span>
-                <span className="hover:text-blue-400 cursor-pointer">Blog</span>
-                <span className="hover:text-blue-400 cursor-pointer">Contact</span>
+                <a href="#home" className="hover:text-blue-400 cursor-pointer">Home</a>
+                <a href="#services" className="hover:text-blue-400 cursor-pointer">Services</a>
+                <a href="#about" className="hover:text-blue-400 cursor-pointer">About</a>
+                <a href="#blog" className="hover:text-blue-400 cursor-pointer">Blog</a>
+                <a href="#contact" className="hover:text-blue-400 cursor-pointer">Contact</a>
 
                 {/* Botón CTA */}
-                <button className="ml-4 px-5 py-2 bg-white hover:bg-gray-200 text-black font-semibold rounded-lg shadow transition duration-300">
-                    Book now
-                </button>
+                <a href="#booking">
+                    <button className="ml-4 px-5 py-2 bg-white hover:bg-gray-200 text-black font-semibold rounded-lg shadow transition duration-300">
+                        Book now
+                    </button>
+                </a>
             </div>
         </nav>
     );
